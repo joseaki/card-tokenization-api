@@ -9,6 +9,7 @@
 
 - Crear un archivo llamado `.env` en la raíz del proyecto. Puede usar el archivo `.env.example` como base. Puede dejar los valores por defecto si tiene configurado mongo y redis con los puertos por defecto, caso contrario, deberá insertar las urls correspondientes.
 - Crear un archivo llamado `tokenization` (sin extensión) en la raíz del proyecto. Puede usar el archivo `tokenization.example` como base.
+- Ejecutar `npm install` para instalar las dependencias
 
 ## Migrar documento inicial
 
@@ -17,7 +18,6 @@
 ## Ejecutar en ambiente local
 
 - Ejecutar `npm install -g serverless` para instalar serverless globalmente
-- Ejecutar `npm install` para instalar las dependencias
 - Ejecutar `npm run start` para ejecutar el proyecto en ambiente local
 
 ## Endpoints
