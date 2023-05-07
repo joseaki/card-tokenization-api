@@ -6,9 +6,9 @@ export default {
   timeout: 5,
   events: [
     {
-      http: {
+      httpApi: {
         method: "post",
-        path: "create-token",
+        path: "/create-token",
       },
     },
   ],

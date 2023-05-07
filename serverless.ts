@@ -5,7 +5,7 @@ import getCardInfo from "@functions/get-card-info";
 import login from "@functions/login";
 
 const serverlessConfiguration: AWS = {
-  service: "culqi-api",
+  service: "culqi-api-b",
   frameworkVersion: "3",
   plugins: [
     "serverless-esbuild",
@@ -16,6 +16,9 @@ const serverlessConfiguration: AWS = {
   provider: {
     name: "aws",
     runtime: "nodejs14.x",
+    httpApi: {
+      cors: { allowedOrigins: ["https://tokenization-web.vercel.app"] },
+    },
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,

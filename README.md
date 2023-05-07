@@ -55,9 +55,9 @@ Los endpoints expuestos son:
 
 ## Los endpoints expuestos en AWS son:
 
-- POST | https://6pvnc28q71.execute-api.us-east-1.amazonaws.com/prod/login
-- POST | https://6pvnc28q71.execute-api.us-east-1.amazonaws.com/prod/create-token
-- GET | https://6pvnc28q71.execute-api.us-east-1.amazonaws.com/prod/get-card-info/{cardToken}
+POST - https://dsj1p8ud0j.execute-api.us-east-1.amazonaws.com/login
+POST - https://dsj1p8ud0j.execute-api.us-east-1.amazonaws.com/create-token
+GET - https://dsj1p8ud0j.execute-api.us-east-1.amazonaws.com/get-card-info/{cardToken}
 
 Puede usarse con el mismo body y headers que en ambiente local.
 
@@ -66,3 +66,7 @@ Puede usarse con el mismo body y headers que en ambiente local.
 - Instalar AWS-CLI https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html
 - Ejecutar `aws configure` para configurar AWS con tus credenciales.
 - Ejecutar `npm run deploy` para desplegar las funciones en AWS Lambda.
+
+# Correr tests
+
+Ejecutar `npm run test`

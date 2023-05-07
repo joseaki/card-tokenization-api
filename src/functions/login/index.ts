@@ -7,9 +7,9 @@ export default {
   timeout: 5,
   events: [
     {
-      http: {
+      httpApi: {
         method: "post",
-        path: "login",
+        path: "/login",
       },
     },
   ],

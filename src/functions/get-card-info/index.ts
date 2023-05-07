@@ -6,9 +6,9 @@ export default {
   timeout: 5,
   events: [
     {
-      http: {
+      httpApi: {
         method: "get",
-        path: "get-card-info/{cardToken}",
+        path: "/get-card-info/{cardToken}",
       },
     },
   ],
