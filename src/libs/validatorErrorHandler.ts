@@ -1,7 +1,6 @@
 export const validatorErrorHandler = () => {
   const customMiddlewareAfter = async (request) => {
     const { response } = request;
-    // ...
     request.response = response;
   };
 

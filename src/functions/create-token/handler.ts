@@ -13,7 +13,7 @@ import { IHeaders } from "src/interface/headers.types";
 
 const getUUID = async (commercePK: string, attempts = 5) => {
   if (attempts == 0) {
-    throw new Error("Error trying to get UUID, please try again");
+    throw new Error("Error generando una UUID");
   }
   const uuid = generateRandomString(16);
   const data = await getCreditCard(commercePK, uuid);

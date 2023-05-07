@@ -6,7 +6,7 @@ const cardJoi = Joi.extend((joi) => ({
   type: "number",
   base: joi.number(),
   messages: {
-    "number.creditCart": "{{#label}} must be a valid credit card number",
+    "number.creditCart": "Número de tarjeta inválida",
   },
   rules: {
     creditCart: {
@@ -24,27 +24,27 @@ const cardJoi = Joi.extend((joi) => ({
 const schema = Joi.object<ITokenizeRequest>({
   card_number: cardJoi.number().creditCart().required().strict(),
   cvv: Joi.number().required().strict().messages({
-    "number.base": "cvv should be a number",
-    "number.empty": "cvv should not be empty",
-    "any.required": "cvv number is required",
+    "number.base": "CVV debe ser un número",
+    "number.empty": "CVV no debe estar vacío",
+    "any.required": "CVV es requerido",
   }),
   expiration_month: Joi.number().min(1).max(12).required().messages({
-    "number.base": "expiration_month should be a number",
-    "number.empty": "expiration_month should not be empty",
-    "number.min": "expiration_month must be more or equal than zero",
-    "number.max": "expiration_month must be less than or equal to 12",
-    "any.required": "expiration_month is required",
+    "number.base": "El mes debe ser un número válido",
+    "number.empty": "El mes no debe estar vacío",
+    "number.min": "El mes debe ser mayor o igual a cero",
+    "number.max": "El mes debe ser menor o igual a 12",
+    "any.required": "El mes es requerido",
   }),
   expiration_year: Joi.number()
     .min(new Date().getFullYear())
     .max(new Date().getFullYear() + 5)
     .required()
     .messages({
-      "number.base": "expiration_year should be a number",
-      "number.empty": "expiration_year should not be empty",
-      "number.min": "expiration_year must be more or equal than {{#limit}}",
-      "number.max": "expiration_year must be less than or equal to {{#limit}}",
-      "any.required": "expiration_year is required",
+      "number.base": "El año debe ser un número válido",
+      "number.empty": "El año no debe estar vacío",
+      "number.min": "El año debe ser mayor o igual a {{#limit}}",
+      "number.max": "El año debe ser menor o igual a  {{#limit}}",
+      "any.required": "El ano es requerido",
     }),
   email: Joi.string().email().required(),
 }).custom((obj, helpers) => {
@@ -53,7 +53,7 @@ const schema = Joi.object<ITokenizeRequest>({
     (obj.expiration_year === new Date().getFullYear() &&
       obj.expiration_month < new Date().getMonth() + 1)
   ) {
-    return helpers.message({ custom: `credit card expired` });
+    return helpers.message({ custom: `La tarjeta ya expiró` });
   }
 
   const cvv = obj.cvv.toString();
@@ -63,7 +63,7 @@ const schema = Joi.object<ITokenizeRequest>({
   } else if (ccType !== CC.AMEX && cvv.length === 3) {
     return obj;
   } else if (!ccType || cvv) {
-    return helpers.message({ custom: `invalid cvv number` });
+    return helpers.message({ custom: `CVV inválido` });
   }
 });
 export default schema;

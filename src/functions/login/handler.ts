@@ -10,11 +10,11 @@ import { NotFoundError, UnauthorizedError } from "@libs/error";
 export const login = async (body: ILoginRequest) => {
   const commerce = await getCommerceByUsername(body.username);
 
-  if (!commerce) throw new NotFoundError("Commerce not found");
+  if (!commerce) throw new NotFoundError("Comercio no encontrado");
 
   const isValidUser = bcrypt.compareSync(body.password, commerce.password);
 
-  if (!isValidUser) throw new UnauthorizedError("Invalid username or password");
+  if (!isValidUser) throw new UnauthorizedError("Credenciales inválidas");
 
   return {
     token: commerce.pk,

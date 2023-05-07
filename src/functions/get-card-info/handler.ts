@@ -17,7 +17,7 @@ export const getCardInfo = async (
   const tokenizedCard = await getCreditCard(headers.authorization, cardToken);
 
   if (!tokenizedCard) {
-    throw new NotFoundError("Invalid or expired card token");
+    throw new NotFoundError("Token de tarjeta inválido o ya expiró");
   }
 
   const cardText = decryptWithAES(tokenizedCard);
