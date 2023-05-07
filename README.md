@@ -55,9 +55,9 @@ Los endpoints expuestos son:
 
 ## Los endpoints expuestos en AWS son:
 
-POST - https://dsj1p8ud0j.execute-api.us-east-1.amazonaws.com/login
-POST - https://dsj1p8ud0j.execute-api.us-east-1.amazonaws.com/create-token
-GET - https://dsj1p8ud0j.execute-api.us-east-1.amazonaws.com/get-card-info/{cardToken}
+POST - https://m8r6ajcw66.execute-api.us-east-1.amazonaws.com/login
+POST - https://m8r6ajcw66.execute-api.us-east-1.amazonaws.com/create-token
+GET - https://m8r6ajcw66.execute-api.us-east-1.amazonaws.com/get-card-info/{cardToken}
 
 Puede usarse con el mismo body y headers que en ambiente local.
 

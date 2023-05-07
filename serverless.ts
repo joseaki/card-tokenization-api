@@ -17,12 +17,7 @@ const serverlessConfiguration: AWS = {
     name: "aws",
     runtime: "nodejs14.x",
     httpApi: {
-      cors: {
-        allowedOrigins: [
-          "https://tokenization-web.vercel.app",
-          "http://localhost",
-        ],
-      },
+      cors: true,
     },
     apiGateway: {
       minimumCompressionSize: 1024,
