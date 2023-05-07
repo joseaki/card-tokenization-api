@@ -2,8 +2,8 @@
 
 ## Requisitos previos
 
-- Tener instalado mongoDB
-- Tener instalado Redis
+- Tener instalado y ejecutado mongoDB
+- Tener instalado y ejecutado Redis
 
 ## Preparar ambiente local
 
