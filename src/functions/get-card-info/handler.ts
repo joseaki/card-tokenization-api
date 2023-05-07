@@ -14,7 +14,7 @@ export const getCardInfo = async (
   headers: IHeaders
 ): Promise<Omit<ITokenizeRequest, "cvv" | "email">> => {
   const { cardToken } = pathParameters;
-  const tokenizedCard = await getCreditCard(headers.Authorization, cardToken);
+  const tokenizedCard = await getCreditCard(headers.authorization, cardToken);
 
   if (!tokenizedCard) {
     throw new NotFoundError("Invalid or expired card token");

@@ -13,7 +13,7 @@ describe("first", () => {
     cardToken: "some_token",
   };
   const headers = {
-    Authorization: "pk_test_xyzxyzxyzxyzxyzx",
+    authorization: "pk_test_xyzxyzxyzxyzxyzx",
   };
 
   beforeEach(async () => {

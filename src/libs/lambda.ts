@@ -5,7 +5,7 @@ import httpErrorHandler from "@middy/http-error-handler";
 import { ValidateFrom, validateSchema } from "./schemaValidator";
 import * as Joi from "joi";
 import { ValidatedEventAPIGatewayProxyEvent } from "./apiGateway";
-import { validateAuthorization } from "./authorize";
+import { validateauthorization } from "./authorize";
 
 export const publicMiddyfy = (
   handler: ValidatedEventAPIGatewayProxyEvent<any>,
@@ -25,7 +25,7 @@ export const middyfy = (
   validationFrom?: ValidateFrom
 ) => {
   return middy(handler)
-    .use(validateAuthorization())
+    .use(validateauthorization())
     .use(middyJsonBodyParser())
     .use(validatorErrorHandler())
     .use(validateSchema(schemaToValidate, validationFrom))

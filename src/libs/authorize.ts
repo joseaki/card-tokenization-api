@@ -1,11 +1,11 @@
 import { getCommerceByPk } from "@database/mongo/repository/commerce.repository";
 
-export const validateAuthorization = () => {
+export const validateauthorization = () => {
   const customMiddlewareBefore = async ({ event }) => {
-    if (!event.headers.Authorization) {
+    if (!event.headers.authorization) {
       throw new Error("Unauthorized");
     } else {
-      const commerce = await getCommerceByPk(event.headers.Authorization);
+      const commerce = await getCommerceByPk(event.headers.authorization);
       if (!commerce) {
         throw new Error("Unauthorized");
       }

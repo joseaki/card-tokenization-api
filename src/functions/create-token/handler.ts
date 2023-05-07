@@ -34,8 +34,8 @@ export const insertCreditCard = async (
   });
   const encryptedText = encryptWithAES(cardDetails);
 
-  const uuid = await getUUID(headers.Authorization);
-  await saveCreditCard(headers.Authorization, uuid, encryptedText);
+  const uuid = await getUUID(headers.authorization);
+  await saveCreditCard(headers.authorization, uuid, encryptedText);
 
   return {
     token: uuid,

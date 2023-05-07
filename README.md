@@ -35,7 +35,7 @@ Los endpoints expuestos son:
 - POST | http://localhost:3000/dev/create-token
   - HEADER
     ```sh
-    Authorization: pk_test_mol23f2no94bc73d
+    authorization: pk_test_mol23f2no94bc73d
     ```
   - BODY
     ```json
@@ -50,7 +50,7 @@ Los endpoints expuestos son:
 - GET | http://localhost:3000/dev/get-card-info/{cardToken} | `{cardToken}` es el token devuelto por el endpoint para crear el token.
   - HEADER
     ```sh
-    Authorization: pk_test_mol23f2no94bc73d
+    authorization: pk_test_mol23f2no94bc73d
     ```
 
 ## Los endpoints expuestos en AWS son:
